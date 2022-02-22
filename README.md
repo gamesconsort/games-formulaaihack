@@ -1,1 +1,2 @@
 # games-formulaaihack
+`npm install`
