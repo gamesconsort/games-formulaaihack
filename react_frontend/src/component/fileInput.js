@@ -24,7 +24,7 @@ export default function FileInput() {
         // const formData = new FormData();
         // formData.append(file);
         // axios.post("api/uploadfile", formData)
-        // .then((response) => {setData(response.data);
+        // .then((response) => {gen.setData(response.data);
         gen.setData(JSON.parse(responseData));
       } else {
         setErrorMessage(
