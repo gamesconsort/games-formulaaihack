@@ -1,0 +1,10 @@
+.login,
+.image {
+    min-height: 100vh
+}
+
+.bg-image {
+    background-image: url('https://cdn.pixabay.com/photo/2021/11/22/06/54/max-fold-6815944_960_720.jpg');
+    background-size: cover;
+    background-position: center center
+}
