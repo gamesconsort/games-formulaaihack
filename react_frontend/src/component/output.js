@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Button from "./Button";
 import DataContext from "./DataContext";
 
@@ -51,7 +51,7 @@ export default function Output({ data }) {
                   <img
                     className="card-img-top"
                     src={weatherImage(data[1]["type"])}
-                    alt="Card image cap"
+                    alt="Weather type"
                   />
                 </div>
                 <ul class="list-group">
