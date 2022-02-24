@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Button from "./Button";
 import DataContext from "./DataContext";
+import Visual from "./visual";
 
 export default function Output({ data }) {
   const gen = useContext(DataContext);
@@ -67,6 +68,7 @@ export default function Output({ data }) {
               Make Another Prediction
             </button>
           </div>
+          <Visual />
         </>
       )}
     </>
