@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Button from "./Button";
 import DataContext from "./DataContext";
 import Visual from "./visual";
@@ -44,31 +44,39 @@ export default function Output({ data }) {
       {gen.data && (
         <>
           <Button />
-          <h3 className="display-4 text-center">Prediction!!!</h3> <br />
-          <div className="row justify-content-center">
-            {Object.entries(gen.data).map((data, index) => (
-              <div key={index} className="col-4 pb-2 text-center">
-                <div className="card">
-                  <img
-                    className="card-img-top"
-                    src={weatherImage(data[1]["type"])}
-                    alt="Weather type"
-                  />
+          <div className="row">
+            <div className="col-md-4">
+              <Visual />
+            </div>
+            <div className="col-md-8">
+              <div className="row justify-content-center">
+                <div className="col-md-12">
+                  <h3 className="display-6 text-center">Prediction!!!</h3> <br />
                 </div>
-                <ul class="list-group">
-                  <li class="list-group-item">{data[0]} min</li>
-                  <li class="list-group-item">{weather(data[1]["type"])}</li>
-                  <li class="list-group-item">
-                    {data[1]["rain_percentage"]}% rain
-                  </li>
-                </ul>
+                {Object.entries(gen.data).map((data, index) => (
+                  <div key={index} className="col-4 pb-2 text-center">
+                    <div className="card">
+                      <img
+                        className="card-img-top"
+                        src={weatherImage(data[1]["type"])}
+                        alt="Weather type"
+                      />
+                    </div>
+                    <ul class="list-group">
+                      <li class="list-group-item">{data[0]} min</li>
+                      <li class="list-group-item">{weather(data[1]["type"])}</li>
+                      <li class="list-group-item">
+                        {data[1]["rain_percentage"]}% rain
+                      </li>
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
-            <button onClick={clear} className="btn btn-block btn-success">
+            </div>
+            <button onClick={clear} className="btn btn-lg btn-block btn-success">
               Make Another Prediction
             </button>
           </div>
-          <Visual />
         </>
       )}
     </>

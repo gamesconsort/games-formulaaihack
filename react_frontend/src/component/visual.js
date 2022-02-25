@@ -1,4 +1,4 @@
-// import 'chart.js/auto';
+import 'chart.js/auto';
 import React, {useContext, useEffect, useState} from 'react';
 import {Bar, Pie} from 'react-chartjs-2';
 import DataContext from "./DataContext";
@@ -28,11 +28,11 @@ export default function Visual() {
           '#6800B4'
         ],
         hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
-        '#35014F'
+          '#501800',
+          '#4B5000',
+          '#175000',
+          '#003350',
+          '#35014F'
         ],
         data: weatherData
       }
@@ -44,7 +44,7 @@ export default function Visual() {
              '30 mins', '60 mins'],
     datasets: [
       {
-        label: 'Rainfall',
+        label: 'Weather Prediction per Time',
         backgroundColor: 'rgba(75,192,192,1)',
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 2,
@@ -56,9 +56,9 @@ export default function Visual() {
   return (
     <div className="row">
       <div className="col-md-12">
-        <h3 className="display-4 text-center">Prediction Visualization</h3> <br />
+        <h3 className="display-6 text-center">Prediction Visualization</h3> <br />
       </div>
-      <div className="col-md-6">
+      <div className="col-md-12 pb-5" style={{}}>
         <Pie
           data={pieState}
           options={{
@@ -74,7 +74,7 @@ export default function Visual() {
           }}
         />
       </div>
-      <div className="col-md-6">
+      <div className="col-md-12">
         <Bar
           data={barState}
           options={{

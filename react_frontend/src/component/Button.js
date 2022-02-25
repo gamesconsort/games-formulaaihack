@@ -13,6 +13,7 @@ export default function Button() {
       <div className="col text-center">
         <span className="btn-yellow"></span>
       </div>
+      <hr/>
     </div>
   );
 }
